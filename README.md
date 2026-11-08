@@ -8,4 +8,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 
 | Breakdown | Video |
 |---|---|
-| (first one coming soon) | |
+| [Every AI agent is made of 3 parts](f11-three-parts-of-an-agent/) | model, harness, context |
