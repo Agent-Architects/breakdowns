@@ -9,3 +9,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | Breakdown | Video |
 |---|---|
 | [Every AI agent is made of 3 parts](f11-three-parts-of-an-agent/) | model, harness, context |
+| [Build your own software factory](software-factory/) | intake, orchestration, verification + CI/CD |
