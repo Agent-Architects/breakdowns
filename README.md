@@ -13,3 +13,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [How an AI agent edits video with no mistakes](ai-video-editing-workflow/) | Drive inbox, VM, Whisper cuts, review link, motion graphics, funnel, posting |
 | [Teach your agent to climb the context tree](context-tree/) | trunk, branches, INDEX.md routing, progressive disclosure, skills |
 | [AI models are really a mirror of you](ai-models/) | tokens, attention, training, context window, grounding, verification |
+| [The context playbook: how to engineer your agent's context](context-engineering/) | budget, accuracy, skills, instruction files, routing, compaction, subagents, load-order map, templates |
