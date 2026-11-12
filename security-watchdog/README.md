@@ -10,7 +10,7 @@ something hits.
    Vulnerabilities, supply-chain research blogs, oss-security) plus security feeds for your specific vendors, each
    one fetched and verified before it is added.
 3. **Checks every 30 minutes**, cheapest step first:
-   - a script fetches the feeds and keeps only what is new (free);
+   - a script fetches the feeds and keeps only what is new (no model, no tokens);
    - a small, cheap model reads the new items and decides which ones touch your stack, by meaning, not keywords;
    - only when something is relevant, your strongest model checks the real exposure (installed versions, whether a
      bad package ever ran, which keys a breached service holds) and prepares the fix: a branch or draft PR with the
