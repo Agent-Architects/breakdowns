@@ -1,6 +1,6 @@
 ---
 name: security-watchdog
-description: "Watch for security vulnerabilities, supply-chain malware and breached services that affect YOUR stack. Maps the user's projects, dependencies, local machine, AI tools and services, picks security feeds for that stack (base CVE and malware feeds plus vendor feeds it finds and verifies), polls them every 30 minutes with a free script, has a cheap model judge relevance, and wakes a frontier model only for relevant items to prepare the fix (branch or draft PR, dependency bump, ordered key-rotation list, or plan). Asks the user on their chosen channel before applying anything. Use to set it up, verify it, run a check, apply an approved fix, or tune it."
+description: "Watch for security vulnerabilities, supply-chain malware and breached services that affect YOUR stack. Maps the user's projects, dependencies, local machine, AI tools and services, picks security feeds for that stack (base CVE and malware feeds plus vendor feeds it finds and verifies), polls them every 30 minutes with a plain script (no model, no tokens), has a cheap model judge relevance, and wakes a frontier model only for relevant items to prepare the fix (branch or draft PR, dependency bump, ordered key-rotation list, or plan). Asks the user on their chosen channel before applying anything. Use to set it up, verify it, run a check, apply an approved fix, or tune it."
 ---
 
 # Security watchdog
@@ -23,7 +23,7 @@ something they use, they hear about it within the hour with a fix ready, and not
 
 ## How a run works (and what it costs)
 The OS scheduler runs `scripts/run.sh` (macOS, Linux) or `scripts/run.ps1` (Windows) every 30 minutes:
-1. `poll.py` fetches every source and keeps only items new since the last run. No model, free. Most runs stop here.
+1. `poll.py` fetches every source and keeps only items new since the last run. No model, no tokens. Most runs stop here.
 2. Only if there are new items: the **judge** command runs a cheap model (Haiku, a "mini" or "flash" class model)
    with `prompts/judge.md`. It writes `relevant.json`.
 3. Only if something is RELEVANT: the **triage** command runs the strongest model available with `prompts/triage.md`.
@@ -106,12 +106,11 @@ the last argument, or puts it where you write `"{prompt}"`. The prompt only poin
 
 | Harness | judge_command (weak model) | triage_command (frontier model) |
 |---|---|---|
-| Claude Code | `["claude","-p","--model","haiku","--allowedTools","Read,Write,Edit"]` | `["claude","-p","--model","opus","--allowedTools","<see example>"]` |
+| Claude Code | `["claude","-p","{prompt}","--model","haiku","--allowedTools","Read,Write,Edit"]` | `["claude","-p","{prompt}","--model","opus","--allowedTools","<see example>"]` |
 | Codex CLI | `["codex","exec","--skip-git-repo-check","-m","<small model>","{prompt}"]` | `["codex","exec","--skip-git-repo-check","--sandbox","workspace-write","-m","<strongest model>","{prompt}"]` |
 | Gemini CLI | `["gemini","-m","flash","-p","{prompt}"]` | `["gemini","-m","pro","-p","{prompt}"]` |
-| OpenCode | `["opencode","run","--model","<provider/small-model>","{prompt}"]` | `["opencode","run","--model","<provider/strongest-model>","{prompt}"]` |
-| Cursor CLI | `["agent","-p","--output-format","text","{prompt}"]` | same, with the stronger model if the CLI offers a model flag |
-| Antigravity CLI | `["agy","-p","{prompt}","--model","<small slug>"]` | `["agy","-p","{prompt}","--model","<strong slug>"]` |
+| OpenCode (untested) | `["opencode","run","--model","<provider/small-model>","{prompt}"]` | `["opencode","run","--model","<provider/strongest-model>","{prompt}"]` |
+| Cursor CLI (untested) | `["agent","-p","--output-format","text","{prompt}"]` | same, with the stronger model if the CLI offers a model flag |
 
 Before writing them, confirm on this machine: the binary name and its full path (`command -v claude`, `where claude`
 on Windows; use the full path if the scheduler cannot find it), the model flag and a valid model name (`<cli> --help`,
@@ -215,3 +214,6 @@ best). Never put lockfile or key checks there.
 - `references/base-sources.json`: base feeds, each tested by fetching it.
 - `references/config.example.json`: a starting `config.json`.
 - `references/harness-scheduling.md`: how each agent harness schedules and runs headless, with official sources.
+
+
+Note: draft PRs (`allow_draft_pr: true`) also need the triage tools to allow pushing, e.g. add `Bash(git push *)` and `Bash(gh pr create --draft *)`. The example config leaves them out on purpose, so fixes stay local branches until you approve. `Write`/`Edit` are not limited to your repos by the CLI; run the watchdog as a user that only owns what it should touch.

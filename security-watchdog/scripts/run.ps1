@@ -1,5 +1,5 @@
 # Security watchdog, one scheduled run (Windows PowerShell 5.1+ or PowerShell 7). Same flow as run.sh:
-#   1. poll.py (free)                    exit 0 nothing new, 2 sources failed, 10 new items
+#   1. poll.py (no model)                    exit 0 nothing new, 2 sources failed, 10 new items
 #   2. judge_command (weak model)        only on exit 10, reads prompts\judge.md, writes relevant.json
 #   3. triage_command (frontier model)   only when the judge found something relevant, reads prompts\triage.md
 # usage: powershell -NoProfile -ExecutionPolicy Bypass -File run.ps1 [--inject-test] [--baseline]
@@ -102,7 +102,7 @@ try {
     & $PyExe @PyPre $Poll $WD --pending-triage
     if ($LASTEXITCODE -eq 11) { Write-Log 'retrying unfinished triage'; Invoke-Triage }
 
-    # 1. free poll
+    # 1. poll (no model)
     & $PyExe @PyPre $Poll $WD @args 2>&1 | ForEach-Object { Write-Log "$_" }
     $rc = $LASTEXITCODE
     if ($rc -eq 0) { exit 0 }

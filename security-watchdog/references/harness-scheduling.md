@@ -1,3 +1,5 @@
+> Caveat: research notes from 2026-11-12. Rows marked UNCONFIRMED or speculative were not tested; verify flags with your CLI's --help before relying on them.
+
 # Harness scheduling research (checked 2026-11-12, official docs only)
 
 Goal: run an agent with a prompt every 30 minutes. "UNCONFIRMED" = not stated on an official page I fetched.

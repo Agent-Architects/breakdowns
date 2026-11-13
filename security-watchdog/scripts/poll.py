@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Security watchdog: the free layer. No model is involved here.
+"""Security watchdog: the no-model layer. No model is involved here.
 
 usage:
   poll.py <WD>                    fetch every source in WD/sources.json, write only NEW items to WD/new_items.json

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Security watchdog, one scheduled run (macOS / Linux). Cheapest layer first:
-#   1. poll.py (free)                       exit 0 nothing new, 2 sources failed, 10 new items
+#   1. poll.py (no model)                       exit 0 nothing new, 2 sources failed, 10 new items
 #   2. judge_command (weak model)           only on exit 10, reads prompts/judge.md, writes relevant.json
 #   3. triage_command (frontier model)      only when the judge found something relevant, reads prompts/triage.md
 # usage: run.sh [--inject-test] [--baseline]       (extra args go to poll.py)
@@ -69,7 +69,7 @@ triage() {
 "$PY" "$POLL" "$WD" --pending-triage
 if [ $? -eq 11 ]; then log "retrying unfinished triage"; triage; fi
 
-# 1. free poll
+# 1. poll (no model)
 "$PY" "$POLL" "$WD" "$@" 2>&1 | tee -a "$LOG"
 rc=${PIPESTATUS[0]}
 case "$rc" in
