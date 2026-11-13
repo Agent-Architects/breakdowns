@@ -1,0 +1,10 @@
+[
+ {"name": "github-malware", "kind": "ghsa", "url": "https://api.github.com/advisories?type=malware&per_page=100&sort=published&direction=desc", "why": "poisoned npm/PyPI packages, newest first"},
+ {"name": "github-reviewed", "kind": "ghsa", "url": "https://api.github.com/advisories?type=reviewed&per_page=100&sort=published&direction=desc", "why": "reviewed CVEs/GHSAs across ecosystems"},
+ {"name": "osv-npm", "kind": "osv", "ecosystem": "npm", "url": "https://storage.googleapis.com/osv-vulnerabilities/npm/modified_id.csv", "why": "OSV changed IDs, ~30 min batches, includes MAL- malware records"},
+ {"name": "osv-pypi", "kind": "osv", "ecosystem": "PyPI", "url": "https://storage.googleapis.com/osv-vulnerabilities/PyPI/modified_id.csv", "why": "same for PyPI"},
+ {"name": "cisa-kev", "kind": "kev", "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json", "why": "exploited in the wild: patch now (business days only, no malware)"},
+ {"name": "stepsecurity", "kind": "feed", "match_packages": true, "url": "https://www.stepsecurity.io/blog/rss.xml", "why": "fastest human write-ups of supply-chain compromises"},
+ {"name": "socket", "kind": "feed", "match_packages": true, "url": "https://socket.dev/api/blog/feed.atom", "why": "npm/PyPI malware research"},
+ {"name": "oss-security", "kind": "feed", "url": "https://seclists.org/rss/oss-sec.rss", "why": "early open-source CVE disclosures, a post every few minutes"}
+]

@@ -1,0 +1,9 @@
+{
+ "judge_command": ["claude", "-p", "--model", "haiku", "--allowedTools", "Read,Write,Edit"],
+ "judge_timeout_minutes": 15,
+ "triage_command": ["claude", "-p", "--model", "opus", "--allowedTools", "Read,Write,Edit,Glob,Grep,WebFetch,Bash(git status *),Bash(git log *),Bash(git diff *),Bash(git switch *),Bash(git checkout -b *),Bash(git add *),Bash(git commit *),Bash(npm ls *),Bash(npm install *),Bash(npm test *),Bash(pip show *),Bash(grep -l *)"],
+ "triage_timeout_minutes": 45,
+ "notify": "Describe how to reach the user, e.g.: send a direct message with the Slack MCP tool to the user, or pipe the text to notify_command.",
+ "notify_command": [],
+ "allow_draft_pr": false
+}
