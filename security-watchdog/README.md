@@ -13,7 +13,7 @@ something hits.
    - a script fetches the feeds and keeps only what is new (no model, no tokens);
    - a small, cheap model reads the new items and decides which ones touch your stack, by meaning, not keywords;
    - only when something is relevant, your strongest model checks the real exposure (installed versions, whether a
-     bad package ever ran, which keys a breached service holds) and prepares the fix: a branch or draft PR with the
+     bad package ever ran, which keys a breached service holds) and prepares the fix: a branch or draft PR (needs push permissions added to the triage tools, off by default) with the
      upgrade, an ordered key-rotation list, or a written plan.
 4. **Asks you first.** You get one message per finding on the channel you choose (Slack, Telegram, email, ...).
    Nothing is merged, deployed or rotated until you say yes.
