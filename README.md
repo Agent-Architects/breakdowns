@@ -20,3 +20,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [An AI edited another AI's weights](ai-brain-surgery/) | MIT CSAIL study, 0.016% of weights edited, MATH-500 7.9% to 48.1%, the repetition-loop catch, the Gemma failure, what it means for agent builders |
 | [Make any CLI tool discoverable to your agent](cli-skill-discovery/) | tool vs skill, skill descriptions in context, step-by-step guide, copy-paste SKILL.md template for a CLI |
 | [One proxy for all your AI subscriptions](cli-proxy/) | CLIProxyAPI setup, serving across machines, rotation, usage dashboard, one-off sandbox token gate, security checklist |
+| [Search every conversation your coding agents ever had](cass/) | cass by Jeffrey Emanuel, 30+ agents, one local SQLite index, install, agent-safe search flags, redaction and raw mirror, license rider |
