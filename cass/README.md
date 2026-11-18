@@ -26,6 +26,27 @@ cass search "ffmpeg crop" --mode lexical --no-maintenance --robot --fields minim
 ```
 `--no-maintenance` stops the search from starting an index in the background. Semantic search is optional: `cass models install` downloads a small model (about 90 MB).
 
+## Cross-computer: one search across all your machines (what I show in the video)
+
+The way I make this cross-computer: pick one computer as the home computer (in my setup that is the one running my ADE, Cortext), install cass on every computer, and have the home computer pull every other computer's agent sessions into its own index over Tailscale. Then one search on the home computer covers every machine.
+
+cass has this built in ("Remote Sources"). It connects over plain SSH and copies the session files with rsync, keeping track of which machine each one came from.
+
+```bash
+# on the home computer: find your other machines (SSH config + online Tailscale peers)
+cass sources discover --tailscale --json
+
+# guided setup: pick hosts, optionally install cass on them, index, write sources.toml, then sync
+cass sources setup --tailscale
+
+# later, pull new sessions from every remote into the home index
+cass sources sync
+```
+
+- Tailscale here is only the network. cass uses ordinary SSH to each machine's Tailscale IP, so your SSH keys, host-key checks and Tailscale ACLs still apply. It does not log in to Tailscale or change your SSH config.
+- Remote machines are listed in `sources.toml`, next to cass's config file.
+- `cass sources setup --dry-run` shows what it would do without changing anything.
+
 ## Safety
 - Local: the index lives on your machine (on macOS, under ~/Library/Application Support). The indexer uploads nothing.
 - Redaction: secrets in message text are redacted before they reach the database and index. On by default.
@@ -34,7 +55,7 @@ cass search "ffmpeg crop" --mode lexical --no-maintenance --robot --fields minim
 - Status: the README calls it alpha. Check `cass --version` before relying on the output format.
 - License: MIT with an OpenAI/Anthropic rider. The rider denies rights to OpenAI, Anthropic and anyone acting for them. If that could apply to you or your employer, read the LICENSE file first. Not legal advice.
 
-Checked against the cass source (commit f94ea2d) and GitHub on 2026-11-14 (release v0.11.0).
+Checked against the cass source (commit f94ea2d) and GitHub on 2026-11-14 (release v0.11.0). Cross-computer section checked against the cass README on 2026-11-18 (commit cd5301a).
 
 ## Sources
 
