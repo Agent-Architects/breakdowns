@@ -21,7 +21,7 @@ The copy-paste prompt is at the bottom and in [PROMPT.md](PROMPT.md).
 
 I ran this exact job twice on the same video, a short about self-improving agent skills.
 
-Same raw footage. Same approved rough cut. Same reference reel. Same motion brief.
+Same raw footage. Same approved rough cut. Same reference reel. The brief was not identical: Fable's was sharper (see below).
 
 - **Opus 5.5** made the first motion draft. My reaction: "This is so bad." The text was hard to read and the scenes felt empty.
 - **Fable 5.2** got a fresh session and one brief: watch the example, redo the whole thing from the raw footage on your own. Its second render, I said "perfect". The final added music and sound effects.
