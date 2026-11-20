@@ -21,4 +21,5 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [Make any CLI tool discoverable to your agent](cli-skill-discovery/) | tool vs skill, skill descriptions in context, step-by-step guide, copy-paste SKILL.md template for a CLI |
 | [One proxy for all your AI subscriptions](cli-proxy/) | CLIProxyAPI setup, serving across machines, rotation, usage dashboard, one-off sandbox token gate, security checklist |
 | [Search every conversation your coding agents ever had](cass/) | cass by Jeffrey Emanuel, 30+ agents, one local SQLite index, install, agent-safe search flags, redaction and raw mirror, license rider |
+| [Claude Code /advisor: when to ask a smarter model](claude-code-advisor/) | how it works, setup, pairings, cost, when a weaker model should consult (dev, knowledge work, automations), drop-in skill |
 | [Claude Code code mode: the full guide](claude-code-code-mode/) | mental model, setup, 12 workflows with prompts, when not to use it, permissions per mode, 5 hook recipes, long-running code, troubleshooting, limits |
