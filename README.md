@@ -13,6 +13,7 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [How an AI agent edits video with no mistakes](ai-video-editing-workflow/) | Drive inbox, VM, Whisper cuts, review link, motion graphics, funnel, posting |
 | [Teach your agent to climb the context tree](context-tree/) | trunk, branches, INDEX.md routing, progressive disclosure, skills |
 | [AI models are really a mirror of you](ai-models/) | tokens, attention, training, context window, grounding, verification |
+| [Pick a model using your own work](model-selection-field-test/) | task scorecard, cost per successful run, latency, and when to try a more capable model |
 | [The context playbook: how to engineer your agent's context](context-engineering/) | budget, accuracy, skills, instruction files, routing, compaction, subagents, load-order map, templates |
 | [Fable prompt: 10 changes to test with Claude Fable 5.2](fable-5-2-prompting/) | ownership, finishing work, effort, subagent cost, never-rules, approvals, token counters, append-only history, silent clients |
 | [Give your agent the right tools](agent-tools/) | scripts, CLI, MCP, MCP vs CLI tokens, browser automation, reusable browser commands, computer use |
