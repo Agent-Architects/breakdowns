@@ -86,7 +86,7 @@ before declaring done. About 1 to 3 calls per long task, 0 on short ones.
 Install the "when-to-consult-advisor" skill from
 https://github.com/Agent-Architects/breakdowns/tree/main/claude-code-advisor/skills/when-to-consult-advisor
 into .claude/skills/, add the short Advisor section from that page to my CLAUDE.md,
-then set my advisor with /advisor opus and confirm it shows as on.
+then tell me to type /advisor opus to switch the advisor on.
 ```
 
 ---
