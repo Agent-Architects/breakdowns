@@ -48,51 +48,22 @@ claude --advisor opus   # this session only, doesn't change your saved setting
 
 ## When should a weaker model consult its advisor?
 
-The rule of thumb: **consult when a mistake would be expensive to undo, or you've already been wrong once.** Don't consult for anything you can check yourself in one cheap step.
+**Default: don't.** Every call re-reads the whole conversation at the stronger model's rates. The advisor pays off at a few expensive moments, not as a habit. On long or high-stakes work, call it at these four moments only:
 
-### Any kind of work
+1. **Once before committing to the plan** on a long task (after you've read enough to have a real plan).
+2. **Before an irreversible or outward-facing action** with real blast radius: delete, migrate, deploy, send, publish, pay, switch on a schedule.
+3. **After the same problem has beaten you twice.** One failure is normal; two means you're missing something.
+4. **Once before declaring a long task done.**
 
-1. Before committing to a plan on a long, multi-step task.
-2. Before an irreversible or outward-facing action: delete, migrate, deploy, send, publish, pay, change permissions, enable a schedule.
-3. When the same error or failed fix comes back. Stop before the third attempt.
-4. Before saying "done" on a multi-step task.
-5. When you're guessing between two readings of the request.
+**Budget:** 0 calls on short tasks, about 1 to 3 on a long one. If you hit 3 on one task, the plan or the request is the problem: ask the user.
 
-### Software development
+**Never for:** routine edits, lookups, anything you can verify by running it once, a single failure you haven't debugged yet, or reassurance.
 
-- Choosing an architecture, data model or library
-- Planning a refactor that touches many files
-- Writing a migration, schema change or data backfill
-- A bug you can't reproduce, or a fix that didn't hold
-- Flaky failures: timing, concurrency, caching
-- Auth, permissions, secrets and input handling
-- Performance changes that alter behavior
-- Deleting code or dependencies you didn't write
-- Tests pass, but only after you changed a test
-- Before opening a PR on a large diff
+**Examples:**
 
-### Knowledge work
-
-- Sources disagree, or a key fact has only one source
-- Before a recommendation or decision memo
-- Summaries someone will act on without reading the originals
-- Numbers, money, legal, medical or contract language
-- The final draft of anything public or client-facing
-- You can't tell what the person actually wants
-
-### Automation building
-
-- Designing the workflow before building it
-- Anything that sends, posts, pays or deletes on its own
-- Before turning on a schedule, webhook or trigger
-- Retries and duplicates: what happens if a step runs twice?
-- Credentials, tokens and account access
-- Error handling and alerts: how will anyone know it broke?
-- Changing a workflow that's already live
-
-### Don't consult for
-
-Routine edits, renames, formatting, lookups you can do yourself, and anything you can verify by running it once.
+- **Software development:** before committing to an architecture on a new feature, before a migration, when a bug survived two fixes.
+- **Knowledge work:** before a recommendation when your key sources disagree, before sending a final public or client document.
+- **Automation building:** before switching on a workflow that sends, posts, pays or deletes on its own, when a live workflow keeps failing after two fixes.
 
 ---
 
@@ -104,9 +75,9 @@ Or just paste this into your `CLAUDE.md`:
 
 ```markdown
 ## Advisor
-Consult the advisor before: committing to a multi-step plan, any irreversible or
-outward-facing action, the third attempt at the same failure, and declaring a multi-step
-task done. Don't consult for routine edits or anything you can verify yourself in one step.
+Default: don't call it. Only on long or high-stakes work: once before committing to the plan,
+before an irreversible or outward-facing action, after the same problem beat you twice, and once
+before declaring done. About 1 to 3 calls per long task, 0 on short ones.
 ```
 
 ### Paste-in prompt for your agent
