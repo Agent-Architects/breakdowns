@@ -24,3 +24,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [Search every conversation your coding agents ever had](cass/) | cass by Jeffrey Emanuel, 30+ agents, one local SQLite index, install, agent-safe search flags, redaction and raw mirror, license rider |
 | [Claude Code /advisor: when to ask a smarter model](claude-code-advisor/) | how it works, setup, pairings, cost, when a weaker model should consult (dev, knowledge work, automations), drop-in skill |
 | [Claude Code code mode: the full guide](claude-code-code-mode/) | mental model, setup, 12 workflows with prompts, when not to use it, permissions per mode, 5 hook recipes, long-running code, troubleshooting, limits |
+| [Gemini 4 Neon: Opus 5.5 level for about half the price](gemini-4-neon/) | every number with its source, Opus 5.5 comparison, cost per coding-agent task, the speed catch, which model to pick for what |
