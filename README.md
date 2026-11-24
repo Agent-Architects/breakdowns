@@ -27,3 +27,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [Gemini 4 Neon: Opus 5.5 level for about half the price](gemini-4-neon/) | every number with its source, Opus 5.5 comparison, cost per coding-agent task, the speed catch, which model to pick for what |
 | [Run 10 agents on one project: git worktrees](git-worktrees/) | what a worktree is, 6 steps with exact commands, merging and conflicts, cleanup, 7 pitfalls, prompts to let your agent do the git work |
 | [A2UI 1.0: let your agent answer with UI, not text](a2ui/) | what it is, why it beats text, surfaces, components and data model, real JSON messages, quickstart and skill, model vs builder decisions, catalog safety, who uses it |
+| [Claude Ship: from open PR to ready to merge](claude-ship/) | /ship and /steward on any plan, the watch and what it blocks, hosted Code Review, PR Steward and Claude Approvals, starter approvals.yml, auto-merge warning, costs and spend limits |
