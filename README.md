@@ -35,3 +35,4 @@ Want the full video lessons and the rest of the course? They are inside my Skool
 | [Give your reviewer agent fresh context (and maybe a different model)](fresh-context-reviewer/) | self-preference and self-correction research, fresh session vs different model, four setups, reviewer subagent and prompt |
 | [Turn a skill into a scheduled automation](skill-to-automation/) | record the workflow, SKILL.md template, interview prompt, Desktop and cloud scheduled tasks, GitHub Actions, claude -p with cron or launchd, unattended permissions |
 | [Prune your skills every time a new model drops](prune-skills/) | why old skills get over-prescriptive, what the docs say to cut, baseline evals, keep vs cut table, audit prompt |
+| [My agents rent their own computers: the scripts and rules I give them](agents-rent-vms/) | why, what it costs, hcloud.py rent/list/delete, bootstrap with egress guard, idle cost guard, agent rules block, setup prompt, security checklist |
