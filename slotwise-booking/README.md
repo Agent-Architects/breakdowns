@@ -1,11 +1,10 @@
-<!-- BLOCKED: replace SLOTWISE_REPO_URL once the Slotwise repo is public. Do not merge before. -->
 # My agents built my own Calendly. Here's yours.
 
 You commented CALENDAR, so here's the full breakdown.
 
 **The short version.** Slotwise is the booking app my agents built for me, cleaned up and open-sourced under MIT. You publish booking pages, people pick a free time, and the booking lands on your Google Calendar. It runs on Cloudflare's free plan or on any server with Node. The repo ships a setup runbook, so you clone it, open it in Claude Code (or Codex, or any agent), type `/setup`, and your agent does the build, deploy, domain, Google setup and a real test booking. You only do the logins, the consent screens and any payment. At the end it offers to brand it as yours.
 
-Repo: **SLOTWISE_REPO_URL**
+Repo: **https://github.com/Agent-Architects/slotwise**
 
 ## Why I built my own
 
@@ -89,7 +88,7 @@ Paste this into Claude Code, Codex, or whatever agent you use, in an empty folde
 ```text
 Set up Slotwise, a self-hosted booking app, for me.
 
-1. Clone SLOTWISE_REPO_URL into a folder called slotwise and open it.
+1. Clone https://github.com/Agent-Architects/slotwise into a folder called slotwise and open it.
 2. Read AGENTS.md, then follow skills/setup-slotwise/SKILL.md phase by phase.
    (In Claude Code you can just run /setup.)
 3. Interview me first. Defaults are fine unless I say otherwise:
@@ -113,7 +112,7 @@ Set up Slotwise, a self-hosted booking app, for me.
 Want to see it first with zero accounts? The repo has a two minute local check:
 
 ```bash
-git clone SLOTWISE_REPO_URL slotwise && cd slotwise
+git clone https://github.com/Agent-Architects/slotwise.git slotwise && cd slotwise
 npm ci
 npm run --silent setup:local   # throwaway server: owner, event type, booking, cancel, prints JSON
 npm run dev:node               # then click around at http://localhost:8787 (mock calendar)
@@ -155,7 +154,7 @@ Checked on Nov 25, 2026:
 
 | Claim | Source |
 |---|---|
-| Features, hosting table, config, branding, CLI, security notes, `/setup` and AGENTS.md shortcuts | Slotwise repo (SLOTWISE_REPO_URL): `README.md`, `AGENTS.md` |
+| Features, hosting table, config, branding, CLI, security notes, `/setup` and AGENTS.md shortcuts | Slotwise repo (https://github.com/Agent-Architects/slotwise): `README.md`, `AGENTS.md` |
 | Interview, phases, human-only steps, secrets in files, stop instead of patching, state file and resume, test booking, branding from a reference site | Slotwise repo: `skills/setup-slotwise/SKILL.md`, `.claude/commands/setup.md` |
 | Adapter layer, tested vs untested hosts, single SQLite writer | Slotwise repo: `docs/HOSTING.md` |
 | Five scopes, no full calendar scope, AES-256-GCM, redirect URIs, Testing vs Publish, troubleshooting | Slotwise repo: `docs/GOOGLE-OAUTH-SETUP.md`, `src/adapters/google-calendar.ts` |
