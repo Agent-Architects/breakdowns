@@ -1,0 +1,22 @@
+[
+  {"query": "ok so i wrote this post about the 5 things i hand my agent every morning (its in post.md in my notes folder). can you turn it into a carousel for instagram, 7 slides, first one needs to be a hook", "should_trigger": true},
+  {"query": "make a carousel out of post.md", "should_trigger": true},
+  {"query": "turn notes/launch-script.txt into ig slides, i want to post it tonight", "should_trigger": true},
+  {"query": "can u make slides for instagram from this idea: why i stopped using to-do apps and let my agent run my mornings", "should_trigger": true},
+  {"query": "i have a blog post in drafts/agents-vs-assistants.md, need it as a swipe post for IG, hook slide then 5 points then a CTA", "should_trigger": true},
+  {"query": "carousel post from my newsletter intro, same format as last week's one", "should_trigger": true},
+  {"query": "split this thread into slides i can post on instagram, keep each slide short, max like 15 words", "should_trigger": true},
+  {"query": "Please convert the attached article into a seven-slide Instagram carousel following our house format.", "should_trigger": true},
+  {"query": "my coach said carousels get more saves, take the tips in tips.md and make me one", "should_trigger": true},
+  {"query": "repurpose this video script into a swipeable post for instagram", "should_trigger": true},
+  {"query": "build me a 12 slide investor pitch deck for my startup, pptx, with a market size slide", "should_trigger": false},
+  {"query": "write the caption and hashtags for my instagram post about morning routines", "should_trigger": false},
+  {"query": "summarize post.md in three bullet points", "should_trigger": false},
+  {"query": "resize all the pngs in assets/ to 1080x1350", "should_trigger": false},
+  {"query": "make a youtube thumbnail for my video about agent skills, big text, red background", "should_trigger": false},
+  {"query": "what's the best time to post a carousel on instagram?", "should_trigger": false},
+  {"query": "create a google slides presentation for tomorrow's team meeting about Q4 goals", "should_trigger": false},
+  {"query": "write a linkedin post (text only) from post.md, no images", "should_trigger": false},
+  {"query": "fix the typo on slide 3 of my keynote file", "should_trigger": false},
+  {"query": "design a logo for my newsletter, minimal, black and white", "should_trigger": false}
+]
